@@ -5,7 +5,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import "./App.css";
 import axios from "axios";
-import Header from "./components/Header";
+import Header from "./components/Header/Header";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Character from "./components/Character";
 
