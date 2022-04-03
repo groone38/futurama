@@ -8,7 +8,6 @@ import axios from "axios";
 import Header from "./components/Header/Header";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Character from "./components/Character";
-import NotFound from './components/notFound/NotFound';
 
 function App() {
   const [characters, setCharacters] = useState<ICharacters[]>([]);
@@ -46,7 +45,7 @@ function App() {
         <Routes>
           <Route
             path="/character"
-            element={(charSearch.length !== 0) ? <CharactersList characters={charSearch} loader={loader} />: <NotFound/>}
+            element={<CharactersList characters={charSearch} loader={loader} />}
           />
           <Route path="/character/:id" element={<Character />} />
         </Routes>

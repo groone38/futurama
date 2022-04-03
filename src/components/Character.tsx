@@ -8,7 +8,6 @@ import Loader from "./loader/Loader";
 const Character: FC = () => {
   const [char, setChar] = useState<ICharacters | null>(null);
   const [loader, setLoader] = useState(false);
-  console.log(char);
   const navigate = useNavigate();
   const params = useParams();
   const paramsId = params.id;
