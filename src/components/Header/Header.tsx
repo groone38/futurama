@@ -1,6 +1,6 @@
 import React, { FC, useState } from "react";
 import { Button } from "reactstrap";
-import { ICharacters } from "../type/type";
+import { ICharacters } from "../../type/type";
 
 interface HeaderProps {
   characters: ICharacters[];
