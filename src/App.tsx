@@ -12,11 +12,13 @@ import Character from "./components/Character";
 function App() {
   const [characters, setCharacters] = useState<ICharacters[]>([]);
   const [kek, setKek] = useState<ICharacters[]>([]);
+  const [loader, setLoader] = useState(false);
   useEffect(() => {
     fetchCharacters();
   }, []);
 
   async function fetchCharacters() {
+    setLoader(true)
     try {
       const responce = await axios.get<ICharacters[]>(
         "https://api.sampleapis.com/futurama/characters"
@@ -25,9 +27,10 @@ function App() {
     } catch (e) {
       alert(e);
     }
+    setLoader(false)
   }
   const handlerCharChange = (char: ICharacters[]) => {
-    setKek(char);
+    return setKek(char);
   };
   let char = kek.length !== 0 ? kek : characters;
   return (
@@ -37,7 +40,7 @@ function App() {
         <Routes>
           <Route
             path="/character"
-            element={<CharactersList characters={char} />}
+            element={<CharactersList characters={kek} loader={loader}/>}
           />
           <Route path="/character/:id" element={<Character />} />
         </Routes>
