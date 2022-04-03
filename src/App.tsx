@@ -8,17 +8,18 @@ import axios from "axios";
 import Header from "./components/Header/Header";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Character from "./components/Character";
+import NotFound from './components/notFound/NotFound';
 
 function App() {
   const [characters, setCharacters] = useState<ICharacters[]>([]);
-  const [kek, setKek] = useState<ICharacters[]>([]);
+  const [value, setValue] = useState("");
   const [loader, setLoader] = useState(false);
   useEffect(() => {
     fetchCharacters();
   }, []);
 
   async function fetchCharacters() {
-    setLoader(true)
+    setLoader(true);
     try {
       const responce = await axios.get<ICharacters[]>(
         "https://api.sampleapis.com/futurama/characters"
@@ -27,20 +28,25 @@ function App() {
     } catch (e) {
       alert(e);
     }
-    setLoader(false)
+    setLoader(false);
   }
-  const handlerCharChange = (char: ICharacters[]) => {
-    return setKek(char);
+  
+  const handlerCharChange = (char: string) => {
+    setValue(char);
   };
-  let char = kek.length !== 0 ? kek : characters;
+
+  let charSearch: ICharacters[] = characters.filter((i) =>
+    i.name.first.toLowerCase().includes(value.toLowerCase())
+  );
+  
   return (
     <BrowserRouter>
       <div className="App">
-        <Header characters={characters} handlerCharChange={handlerCharChange} />
+        <Header handlerCharChange={handlerCharChange} /> 
         <Routes>
           <Route
             path="/character"
-            element={<CharactersList characters={kek} loader={loader}/>}
+            element={(charSearch.length !== 0) ? <CharactersList characters={charSearch} loader={loader} />: <NotFound/>}
           />
           <Route path="/character/:id" element={<Character />} />
         </Routes>
