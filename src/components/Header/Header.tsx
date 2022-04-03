@@ -13,7 +13,6 @@ const Header: FC<HeaderProps> = ({ characters, handlerCharChange }) => {
     );
     handlerCharChange(char); 
   };
-
   return (
     <header>
       <h2 style={{ textAlign: "center", color: "white" }}>FUTURAMA</h2>
