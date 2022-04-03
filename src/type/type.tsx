@@ -12,7 +12,7 @@ export interface IImg {
 export interface ICharacters {
     name: IName
     images: IImg
-    gander: string
+    gender: string
     species: string
     homePlanet: string
     occupation: string
