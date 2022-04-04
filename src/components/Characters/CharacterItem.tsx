@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { ICharacters } from "../type/type";
+import { ICharacters } from './../../type/type';
 import "./CharacterItem.css";
 import { Button } from "reactstrap";
 import { NavLink } from "react-router-dom";

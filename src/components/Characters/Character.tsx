@@ -1,9 +1,9 @@
 import axios from "axios";
 import React, { FC, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { ICharacters } from "../type/type";
+import { ICharacters } from './../../type/type';
 import { Button } from "reactstrap";
-import Loader from "./loader/Loader";
+import Loader from './../loader/Loader';
 
 const Character: FC = () => {
   const [char, setChar] = useState<ICharacters | null>(null);

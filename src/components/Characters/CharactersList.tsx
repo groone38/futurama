@@ -1,9 +1,9 @@
 import React, { FC } from "react";
-import { ICharacters } from "../type/type";
+import { ICharacters } from './../../type/type';
 import CharacterItem from "./CharacterItem";
 import "./CharactersList.css";
-import Loader from "./loader/Loader";
-import NotFound from "./notFound/NotFound";
+import Loader from './../loader/Loader';
+import NotFound from "../notFound/NotFound";
 
 interface CharactersListProps {
   characters: ICharacters[];

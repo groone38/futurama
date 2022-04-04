@@ -10,7 +10,6 @@ const Header: FC<HeaderProps> = ({ handlerCharChange }) => {
   };
   return (
     <header>
-      <h2 style={{ textAlign: "center", color: "white" }}>FUTURAMA</h2>
       <div className="input-group mb-3">
         <input
           type="text"
