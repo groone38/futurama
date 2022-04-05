@@ -44,3 +44,12 @@ export interface ICast {
     bio: IBio
     id: number
 }
+
+export interface IEpisodes {
+    number: string
+    title: string
+    writers: string
+    originalAirDate: string
+    desc: string
+    id: number
+}
