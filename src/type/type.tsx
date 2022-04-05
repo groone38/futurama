@@ -31,3 +31,16 @@ export interface IInfo {
     creators: ICreator[]
     id: number
 }
+
+export interface IBio {
+    text?: string
+    url: string
+}
+
+export interface ICast {
+    name: string
+    born: string
+    died?: string
+    bio: IBio
+    id: number
+}

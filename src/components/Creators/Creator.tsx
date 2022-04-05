@@ -15,7 +15,7 @@ const Creator: FC<CreatorProps> = ({item}) => {
                   <strong>Url:</strong> {item.url}
                 </p>
                 <a href={item.url} className="btn btn-outline-secondary">
-                  Go somewhere
+                  Go to IMDB
                 </a>
               </div>
           </div>
