@@ -28,6 +28,6 @@ export interface ICharacters {
 export interface IInfo {
     synopsis: string
     yearsAired: string
-    creators: ICreator
+    creators: ICreator[]
     id: number
 }

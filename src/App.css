@@ -22,10 +22,10 @@
 }
 
 .active {
-    color: aqua;
+    color: #0dcaf0;
     font-weight: bold;
 }
 .header_nav a:hover {
-    color: aqua;
+    color: #0dcaf0;
     font-weight: bold;
 }
