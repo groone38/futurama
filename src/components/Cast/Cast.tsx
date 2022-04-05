@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { FC, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { ICast } from "../../type/type";
 import Loader from "../loader/Loader";
 import CastItem from "./CastItem";
