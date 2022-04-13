@@ -1,27 +1,17 @@
-import React, { FC } from "react";
+import React from "react";
+import classes from './Header.module.css'
+import { NavLink } from "react-router-dom";
 
-interface HeaderProps {
-  handlerCharChange: (char: string) => void;
-}
-
-const Header: FC<HeaderProps> = ({ handlerCharChange }) => { 
-  const handlerChange: React.ChangeEventHandler<HTMLInputElement> = (e) => {
-    handlerCharChange(e.target.value); 
-  };
+export default function Header() {
   return (
-    <header>
-      <div className="input-group mb-3">
-        <input
-          type="text"
-          className="form-control"
-          placeholder="Search characters"
-          aria-label="Recipient's username"
-          aria-describedby="button-addon2"
-          onChange={handlerChange}
-        />
-      </div>
+    <header className={classes.header}>
+      <h2>FUTURAMA</h2>
+      <nav className={classes.header_nav}>
+        <NavLink to={"/"}>Сreators</NavLink>
+        <NavLink to={"/cast"}>Cast</NavLink>
+        <NavLink to={"/episodes"}>Episodes</NavLink>
+        <NavLink to={"/character"}>Character</NavLink>
+      </nav>
     </header>
   );
-};
-
-export default Header;
+}
